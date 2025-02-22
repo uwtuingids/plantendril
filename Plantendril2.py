@@ -203,8 +203,9 @@ def oefen_planten(gefilterde_plantenlijst: pd.DataFrame):
     huidige_plant = st.session_state.oefen_planten.iloc[st.session_state.oefen_index]
     totaal = len(st.session_state.oefen_planten)
     st.write(f"Plant {st.session_state.oefen_index + 1} van {totaal}")
-    st.markdown(f"<h2 style='color: #00652d;'>{huidige_plant['Nederlands']}</h2>", unsafe_allow_html=True)
-    st.markdown(f"<h3 style='font-style: italic; color: #2b7a78;'>{huidige_plant['Wetenschappelijke naam']}</h3>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='font-style: italic; color: #2b7a78;'>{huidige_plant['Wetenschappelijke naam']}</h2>",
+                unsafe_allow_html=True)
+    st.markdown(f"<h3 style='color: #00652d;'>{huidige_plant['Nederlands']}</h3>", unsafe_allow_html=True)
     extra_info = huidige_plant.get('Extra info')
     if pd.notnull(extra_info) and extra_info.strip():
         st.info(extra_info)
