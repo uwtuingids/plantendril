@@ -223,17 +223,14 @@ def initialiseer_vraag():
 def _show_photos(plant_row: pd.Series):
     """
     Displays up to 3 photos from the columns "Foto 1", "Foto 2", "Foto 3".
-    Photos are loaded from the 'Fotos/' folder.
+    Photos are loaded from the online location 'http://www.symbiosa.be/Plantendrill/'.
     """
+    base_url = "http://www.symbiosa.be/Plantendrill/"
     for foto_col in ["Foto 1", "Foto 2", "Foto 3"]:
         if foto_col in plant_row.index and pd.notnull(plant_row[foto_col]):
             photo_filename = str(plant_row[foto_col]).strip()
-            photo_path = os.path.join("Fotos", photo_filename)
-            if os.path.isfile(photo_path):
-                st.image(photo_path, use_container_width=True, width=300)
-            else:
-                st.warning(f"Foto niet gevonden: {photo_path}")
-
+            photo_url = base_url + photo_filename
+            st.image(photo_url, use_container_width=True, width=300)
 
 def quiz_multiple_choice():
     """
