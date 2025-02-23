@@ -5,7 +5,7 @@ import random
 ##############################################
 # GLOBAL CONFIGURATION
 ##############################################
-st.set_page_config(page_title="Planten Oefen App", layout="wide")
+st.set_page_config(page_title="Planten Driller", layout="wide")
 EXCEL_PATH = "PlantenDrill.xlsx"  # Excel file in the same folder
 
 ##############################################
@@ -234,7 +234,7 @@ def show_planten_driller():
     df = load_planten_data(EXCEL_PATH, sheet_name="Planten")
 
     filter_columns = ["Inheems in West-Europa", "Invasieve exoot", "Signaalplant", "Boom", "Struik",
-                      "Vaste plant", "Kruid", "Gras", "Bolgewas", "Knolgewas"]
+                      "Vaste plant", "Kruid", "Gras", "Bolgewas", "Knolgewas", "Opmerkelijke wortels"]
     chosen_plantenlijst_filter = st.sidebar.selectbox(
         "Kies een plantenlijst",
         ["Alle planten"] + filter_columns,
