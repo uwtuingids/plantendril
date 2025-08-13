@@ -225,7 +225,7 @@ def volledige_planten_lijst(gefilterde_plantenlijst: pd.DataFrame):
     st.title("Volledige plantenlijst")
     aantal = len(gefilterde_plantenlijst)
     st.write(f"Aantal planten in de lijst: {aantal}")
-    st.dataframe(gefilterde_plantenlijst[["Nederlands", "Wetenschappelijke naam"]])
+    st.dataframe(gefilterde_plantenlijst[["Nederlands", "Wetenschappelijke naam", "Familie"]])
 
 def show_planten_driller():
     """
